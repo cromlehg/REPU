@@ -1,6 +1,6 @@
-![REPO](logo.jpg "REPO")
+![REPU](logo.jpg "REPU")
 
-# REPO smart contract
+# REPU smart contract
 
 * _Standart_        : ERC20
 * _Name_            : REPU
