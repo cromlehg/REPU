@@ -12,7 +12,7 @@ contract Presale is NextSaleAgentFeature, StagedCrowdsale, REPUCommonSale {
     Milestone storage milestone = milestones[milestoneIndex];
     uint tokens = _invested.mul(price).div(1 ether);
     uint valueBonusTokens = getValueBonusTokens(tokens, _invested);
-    if(milestone.bonus > 0) {
+    if (milestone.bonus > 0) {
       tokens = tokens.add(tokens.mul(milestone.bonus).div(percentRate));
     }
     return tokens.add(valueBonusTokens);

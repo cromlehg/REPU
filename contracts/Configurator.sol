@@ -80,14 +80,14 @@ contract Configurator is Ownable {
   }
 
   function commonConfigure(address saleAddress, address _token) internal {
-     REPUCommonSale sale = REPUCommonSale(saleAddress);
-     sale.addValueBonus(100000000000000000000, 3);
-     sale.addValueBonus(151000000000000000000, 5);
-     sale.addValueBonus(201000000000000000000, 8);
-     sale.addValueBonus(301000000000000000000, 10);
-     sale.addValueBonus(1001000000000000000000, 15);
-     sale.addValueBonus(1501000000000000000000, 20);
-     sale.setToken(_token);
+    REPUCommonSale sale = REPUCommonSale(saleAddress);
+    sale.addValueBonus(100000000000000000000, 3);
+    sale.addValueBonus(151000000000000000000, 5);
+    sale.addValueBonus(201000000000000000000, 8);
+    sale.addValueBonus(301000000000000000000, 10);
+    sale.addValueBonus(1001000000000000000000, 15);
+    sale.addValueBonus(1501000000000000000000, 20);
+    sale.setToken(_token);
   }
 
 }

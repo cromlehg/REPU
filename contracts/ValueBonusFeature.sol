@@ -20,7 +20,7 @@ contract ValueBonusFeature is PercentRateProvider {
 
   function getValueBonusTokens(uint tokens, uint _invested) public view returns(uint) {
     uint valueBonus = getValueBonus(_invested);
-    if(valueBonus == 0) {
+    if (valueBonus == 0) {
       return 0;
     }
     return tokens.mul(valueBonus).div(percentRate);
@@ -28,8 +28,8 @@ contract ValueBonusFeature is PercentRateProvider {
 
   function getValueBonus(uint value) public view returns(uint) {
     uint bonus = 0;
-    for(uint i = 0; i < valueBonuses.length; i++) {
-      if(value >= valueBonuses[i].from) {
+    for (uint i = 0; i < valueBonuses.length; i++) {
+      if (value >= valueBonuses[i].from) {
         bonus = valueBonuses[i].bonus;
       } else {
         return bonus;
