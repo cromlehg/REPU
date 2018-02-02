@@ -68,13 +68,13 @@ contract Configurator is Ownable {
     mainsale.addMilestone(9, 0);                                // 3937.0078 REPU / ETH
     mainsale.setHardcap(30000000000000000000000);               // 30 000 ETH
     mainsale.setMinInvestedLimit(30000000000000000);            // 0.03 ETH
-    mainsale.addValueBonus(2000000000000000000, 2000000);       // > 2 ETH => 2%
-    mainsale.addValueBonus(11000000000000000000, 3000000);      // > 11 ETH => 3%
-    mainsale.addValueBonus(51000000000000000000, 5000000);      // > 51 ETH => 5%
-    mainsale.addValueBonus(101000000000000000000, 7000000);     // > 101 ETH => 7%
-    mainsale.addValueBonus(301000000000000000000, 10000000);    // > 301 ETH => 10%
-    mainsale.addValueBonus(501000000000000000000, 15000000);    // > 501 ETH => 15%
-    mainsale.addValueBonus(1000000000000000000000, 20000000);   // > 1000 ETH => 20%
+    mainsale.addValueBonus(2000000000000000000, 200000);        // > 2 ETH => 2%
+    mainsale.addValueBonus(11000000000000000000, 300000);       // > 11 ETH => 3%
+    mainsale.addValueBonus(51000000000000000000, 500000);       // > 51 ETH => 5%
+    mainsale.addValueBonus(101000000000000000000, 700000);      // > 101 ETH => 7%
+    mainsale.addValueBonus(301000000000000000000, 1000000);     // > 301 ETH => 10%
+    mainsale.addValueBonus(501000000000000000000, 1000000);     // > 501 ETH => 15%
+    mainsale.addValueBonus(1000000000000000000000, 2000000);    // > 1000 ETH => 20%
     mainsale.setFoundersTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
     mainsale.setFoundersTokensPercent(1250000);
     mainsale.setAdvisorsTokensWallet(0x93b103Ecc79f6ef79038E041704a1083E9C4e1A6);
