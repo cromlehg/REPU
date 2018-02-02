@@ -97,4 +97,11 @@ export default function (Token, Crowdsale, wallets) {
     const balance = await token.balanceOf(wallets[3]);
     balance.should.be.bignumber.equal(this.price.times(1.482));
   });
+
+  it('should forward funds to wallet', async function () {
+    const pre = web3.eth.getBalance(wallets[2]);
+    await crowdsale.sendTransaction({value: ether(1.23456), from: wallets[3]});
+    const post = web3.eth.getBalance(wallets[2]);
+    post.minus(pre).should.be.bignumber.equal(ether(1.23456));
+  });
 }
