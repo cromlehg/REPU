@@ -1,7 +1,7 @@
 import ether from '../helpers/ether';
 import tokens from '../helpers/tokens';
 import {advanceBlock} from '../helpers/advanceToBlock';
-import {duration} from '../helpers/increaseTime';
+import {increaseTimeTo, duration} from '../helpers/increaseTime';
 import latestTime from '../helpers/latestTime';
 import EVMRevert from '../helpers/EVMRevert';
 
@@ -21,7 +21,7 @@ export default function (Token, Crowdsale, DevWallet, wallets) {
   });
 
   beforeEach(async function () {
-    this.start = latestTime();
+    this.start = latestTime() + duration.weeks(1);
     this.duration = 30;
     this.end = this.start + duration.days(this.duration);
     this.afterEnd = this.end + duration.seconds(1);
@@ -59,6 +59,8 @@ export default function (Token, Crowdsale, DevWallet, wallets) {
     await crowdsale.transferOwnership(wallets[1]);
     await token.setSaleAgent(crowdsale.address);
     await token.transferOwnership(wallets[1]);
+
+    await increaseTimeTo(this.start);
   });
 
   it('should forward funds to devWallet', async function () {
@@ -96,5 +98,13 @@ export default function (Token, Crowdsale, DevWallet, wallets) {
 
   it('should reject to withdraw funds from devWallet before sales end', async function () {
     await devWallet.withdraw().should.be.rejectedWith(EVMRevert);
+  });
+
+  it('should allow to withdraw funds from devWallet after sales end', async function () {
+    await crowdsale.sendTransaction({value: ether(5), from: wallets[3]});
+    await increaseTimeTo(1525255200);
+    await devWallet.withdraw().should.be.fulfilled;
+    const balance = web3.eth.getBalance('0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770');
+    balance.should.be.bignumber.equal(ether(4.5));
   });
 }
