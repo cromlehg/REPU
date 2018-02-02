@@ -32,7 +32,7 @@ contract Configurator is Ownable {
     closedRound.setWallet(0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b);
     closedRound.setStart(1517652000);
     closedRound.setEnd(1519293600);
-    closedRound.setPrice(1600000000000000000000);         // 1 REPU = 0.00008 ETH
+    closedRound.setPrice(12500000000000000000000);        // 1 REPU = 0.00008 ETH
     closedRound.setHardcap(1000000000000000000000);       // 1000 ETH
     closedRound.setMinInvestedLimit(1000000000000000000); // 1 ETH
     closedRound.setMaxLimit(250000000000000000000);       // 250 ETH
