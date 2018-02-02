@@ -62,9 +62,9 @@ contract Configurator is Ownable {
     // mainsale.setStart();
     mainsale.setPrice(3937007874015748300000);            // 1 REPU = 0.0002540 ETH
     presale.setPercentRate(10000000);
-    mainsale.addMilestone(7, 4820);                       // 5834.6456 REPU / ETH
-    mainsale.addMilestone(7, 2999);                       // 5117.7165 REPU / ETH
-    mainsale.addMilestone(7, 1401);                       // 4488.5826 REPU / ETH
+    mainsale.addMilestone(7, 482000);                     // 5834.6456 REPU / ETH
+    mainsale.addMilestone(7, 299900);                     // 5117.7165 REPU / ETH
+    mainsale.addMilestone(7, 140100);                     // 4488.5826 REPU / ETH
     mainsale.addMilestone(7, 0);                          // 3937.0078 REPU / ETH
     mainsale.setHardcap(30000000000000000000000);         // 30 000 ETH
     mainsale.setMinInvestedLimit(30000000000000000);      // 0.03 ETH
