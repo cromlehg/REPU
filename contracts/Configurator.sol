@@ -50,11 +50,11 @@ contract Configurator is Ownable {
     presale.addMilestone(3, 0);                           // 6854.0095 REPU / ETH
     presale.setHardcap(1800000000000000000000);           // 1800 ETH
     presale.setMinInvestedLimit(100000000000000000);      // 0.1 ETH
-    presale.addValueBonus(2000000000000000000, 2);        // > 2 ETH => 2%
-    presale.addValueBonus(11000000000000000000, 5);       // > 11 ETH => 5%
-    presale.addValueBonus(51000000000000000000, 7);       // > 51 ETH => 7%
-    presale.addValueBonus(101000000000000000000, 10);     // > 101 ETH => 10%
-    presale.addValueBonus(301000000000000000000, 15);     // > 301 ETH => 15%
+    presale.addValueBonus(2000000000000000000, 200);      // > 2 ETH => 2%
+    presale.addValueBonus(11000000000000000000, 500);     // > 11 ETH => 5%
+    presale.addValueBonus(51000000000000000000, 700);     // > 51 ETH => 7%
+    presale.addValueBonus(101000000000000000000, 1000);   // > 101 ETH => 10%
+    presale.addValueBonus(301000000000000000000, 1500);   // > 301 ETH => 15%
     presale.setToken(token);
     presale.setNextSaleAgent(mainsale);
 
