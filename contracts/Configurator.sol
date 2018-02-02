@@ -60,21 +60,21 @@ contract Configurator is Ownable {
 
     mainsale.setWallet(0x29b637Ca54Fc1A9d8d92475f8a64C199c91B82E4);
     // mainsale.setStart();
-    mainsale.setPrice(3937007874015748300000);            // 1 REPU = 0.0002540 ETH
+    mainsale.setPrice(3937007874015748300000);                  // 1 REPU = 0.0002540 ETH
     presale.setPercentRate(10000000);
-    mainsale.addMilestone(7, 482000);                     // 5834.6456 REPU / ETH
-    mainsale.addMilestone(7, 299900);                     // 5117.7165 REPU / ETH
-    mainsale.addMilestone(7, 140100);                     // 4488.5826 REPU / ETH
-    mainsale.addMilestone(7, 0);                          // 3937.0078 REPU / ETH
-    mainsale.setHardcap(30000000000000000000000);         // 30 000 ETH
-    mainsale.setMinInvestedLimit(30000000000000000);      // 0.03 ETH
-    mainsale.addValueBonus(2000000000000000000, 2);       // > 2 ETH => 2%
-    mainsale.addValueBonus(11000000000000000000, 3);      // > 11 ETH => 3%
-    mainsale.addValueBonus(51000000000000000000, 5);      // > 51 ETH => 5%
-    mainsale.addValueBonus(101000000000000000000, 7);     // > 101 ETH => 7%
-    mainsale.addValueBonus(301000000000000000000, 10);    // > 301 ETH => 10%
-    mainsale.addValueBonus(501000000000000000000, 15);    // > 501 ETH => 15%
-    mainsale.addValueBonus(1000000000000000000000, 20);   // > 1000 ETH => 20%
+    mainsale.addMilestone(7, 4820000);                          // 5834.6456 REPU / ETH
+    mainsale.addMilestone(7, 2999000);                          // 5117.7165 REPU / ETH
+    mainsale.addMilestone(7, 1401000);                          // 4488.5826 REPU / ETH
+    mainsale.addMilestone(7, 0);                                // 3937.0078 REPU / ETH
+    mainsale.setHardcap(30000000000000000000000);               // 30 000 ETH
+    mainsale.setMinInvestedLimit(30000000000000000);            // 0.03 ETH
+    mainsale.addValueBonus(2000000000000000000, 2000000);       // > 2 ETH => 2%
+    mainsale.addValueBonus(11000000000000000000, 3000000);      // > 11 ETH => 3%
+    mainsale.addValueBonus(51000000000000000000, 5000000);      // > 51 ETH => 5%
+    mainsale.addValueBonus(101000000000000000000, 7000000);     // > 101 ETH => 7%
+    mainsale.addValueBonus(301000000000000000000, 10000000);    // > 301 ETH => 10%
+    mainsale.addValueBonus(501000000000000000000, 15000000);    // > 501 ETH => 15%
+    mainsale.addValueBonus(1000000000000000000000, 20000000);   // > 1000 ETH => 20%
     mainsale.setFoundersTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
     mainsale.setFoundersTokensPercent(1250000);
     mainsale.setAdvisorsTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
