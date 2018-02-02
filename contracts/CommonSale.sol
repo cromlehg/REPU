@@ -3,6 +3,7 @@ pragma solidity 0.4.18;
 import './math/SafeMath.sol';
 import './PercentRateProvider.sol';
 import './REPUToken.sol';
+import './DevWallet.sol';
 
 contract CommonSale is PercentRateProvider {
 
@@ -19,6 +20,10 @@ contract CommonSale is PercentRateProvider {
   uint public minInvestedLimit;
 
   REPUToken public token;
+
+  DevWallet public devWallet;
+
+  bool public devWalletLocked;
 
   uint public hardcap;
 
@@ -67,6 +72,12 @@ contract CommonSale is PercentRateProvider {
     token = REPUToken(newToken);
   }
 
+  function setDevWallet(address newDevWallet) public onlyOwner {
+    require(!devWalletLocked);
+    devWallet = DevWallet(newDevWallet);
+    devWalletLocked = true;
+  }
+
   function calculateTokens(uint _invested) internal returns(uint);
 
   function mintTokensExternal(address to, uint tokens) public onlyDirectMintAgentOrOwner {
@@ -91,9 +102,27 @@ contract CommonSale is PercentRateProvider {
     return tokens;
   }
 
+  function devWithdraw() internal {
+    uint received = devWallet.balance;
+    uint limit = devWallet.limit();
+    if (received < limit) {
+      uint shouldSend = limit.sub(received);
+      uint value;
+      if (msg.value < shouldSend) {
+        value = msg.value;
+      } else {
+        value = shouldSend;
+      }
+      devWallet.transfer(value);
+    }
+  }
+
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
     require(now >= start && now < endSaleDate());
-    wallet.transfer(msg.value);
+    if (devWallet != address(0)) {
+      devWithdraw();
+    }
+    wallet.transfer(this.balance);
     return mintTokensByETH(msg.sender, msg.value);
   }
 

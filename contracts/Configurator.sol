@@ -5,6 +5,7 @@ import './REPUToken.sol';
 import './ClosedRound.sol';
 import './Presale.sol';
 import './Mainsale.sol';
+import './DevWallet.sol';
 
 contract Configurator is Ownable {
 
@@ -16,12 +17,15 @@ contract Configurator is Ownable {
 
   Mainsale public mainsale;
 
+  DevWallet public devWallet;
+
   function deploy() public onlyOwner {
 
     token = new REPUToken();
     closedRound = new ClosedRound();
     presale = new Presale();
     mainsale = new Mainsale();
+    devWallet = new DevWallet();
 
     token.setSaleAgent(closedRound);
 
@@ -38,6 +42,7 @@ contract Configurator is Ownable {
     closedRound.addValueBonus(101000000000000000000, 10); // > 101 ETH => 10%
     closedRound.setToken(token);
     closedRound.setNextSaleAgent(presale);
+    closedRound.setDevWallet(devWallet);
 
     presale.setWallet(0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b);
     presale.setStart(1519380000);
@@ -57,6 +62,7 @@ contract Configurator is Ownable {
     presale.addValueBonus(301000000000000000000, 1500);   // > 301 ETH => 15%
     presale.setToken(token);
     presale.setNextSaleAgent(mainsale);
+    presale.setDevWallet(devWallet);
 
     mainsale.setWallet(0x29b637Ca54Fc1A9d8d92475f8a64C199c91B82E4);
     mainsale.setStart(1522663200);
@@ -83,6 +89,7 @@ contract Configurator is Ownable {
     mainsale.setBountyTokensPercent(6250);
     mainsale.setLotteryTokensWallet(0xDA7b920F54e14F0Cc5658f0635B45a0839Dbf18C);
     mainsale.setLotteryTokensPercent(625);
+    mainsale.setDevWallet(devWallet);
 
     address manager = 0x8c782FAF936ce57Dca60791a47E680e7A34A6315;
 
