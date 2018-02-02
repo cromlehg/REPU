@@ -7,18 +7,18 @@
 * _Ticket_          : REPU
 * _Decimals_        : 18
 * _Emission_        : Mintable
-* _Crowdsales_      : 2
+* _Crowdsales_      : 3
 * _Fiat dependency_ : No
-* _Tokens locked_   : Yes
+* _Tokens locked_   : No
 
 ## Smart-contracts description
 
-Contract mint bounty and founders tokens after main sale stage finished. 
-Crowdsale contracts have special function to retrieve transferred in errors tokens.
-Also crowdsale contracts have special function to direct mint tokens in wei value (featue implemneted to support external pay gateway).
+Contract mint bounty and founders tokens after main sale stage finish.
+Crowdsale contracts have special function to retrieve tokens transferred by mistake.
 
 ### Contracts contains
 1. _REPUToken_ - Token contract
+2. _ClosedRound_ - Closed round contract
 2. _Presale_ - Presale contract
 3. _Mainsale_ - ICO contract
 4. _Configurator_ - contract with main configuration for production
@@ -33,7 +33,7 @@ Contract manager must call finishMinting after each crowdsale milestone!
 To support external mint service manager should specify address by calling _setDirectMintAgent_. After that specified address can direct mint VST tokens by calling _directMint_.
 
 ### How to invest
-To purchase tokens investor should send ETH (more than minimum 0.1 ETH) to corresponding crowdsale contract.
+To purchase tokens investor should send ETH (above minimum limit) to corresponding crowdsale contract.
 Recommended GAS: 250000, GAS PRICE - 21 Gwei.
 
 ### Wallets with ERC20 support
@@ -47,15 +47,15 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Main network configuration
 
-* _Minimal insvested limit_     : 0.01 ETH
-* _Price_                       : 1 ETH = 1000 REPU
-* _Bounty tokens percent_       : 2% 
-* _Founders tokens percent_     : 15% 
-* _Marketing tokens percent_    : 8% 
-* _For sale tokens percent_     : 75% 
-* _Founders tokens wallet_      :  
-* _Marketing tokens wallet_     :  
-* _Bounty tokens wallet_        : 
+* _Bounty tokens percent_       : 6.25% 
+* _Founders tokens percent_     : 12.5% 
+* _Advisors tokens percent_     : 3.33% 
+* _Lottery tokens percent_      : 0.625% 
+* _Bounty tokens wallet_        : 0xaAF9430b8B68146665acB4F05396d63a71d54C4d
+* _Founders tokens wallet_      : 0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F
+* _Advisors tokens wallet_      : 0x93b103Ecc79f6ef79038E041704a1083E9C4e1A6
+* _Lottery tokens wallet_       : 0xDA7b920F54e14F0Cc5658f0635B45a0839Dbf18C
+* _Manager_                     : 0x8c782FAF936ce57Dca60791a47E680e7A34A6315
 
 ### Links
 1. _Token_ -
@@ -63,39 +63,60 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 2. _Presale_ -
 3. _Mainsale_ -
 
-### Value bonus system
-
-* from 100 ETH bonus +3%
-* from 151 ETH bonus +5%
-* from 201 ETH bonus +8%
-* from 301 ETH bonus +10%
-* from 1001 ETH bonus +15%
-* from 1501 ETH bonus +20%
-
 ### Crowdsale stages
 
 #### Closed sale
+* _Price_                       : 1 ETH = 12500 REPU
+* _Start_                       : Sat Feb 3 2018 10:00:00 GMT
+* _End_                         : Thu Feb 22 2018 10:00:00 GMT
+* _Minimum insvestment limit_   : 1 ETH
+* _Maximum insvestment limit_   : 250 ETH
+* _Hardcap_                     : 1000 ETH
+
+##### Value bonus system
+* from 2 ETH bonus +2%
+* from 11 ETH bonus +5%
+* from 51 ETH bonus +7%
+* from 101 ETH bonus +10%
 
 #### Presale
-* _Base price_                 : 1600 REPU per ETH
-* _Hardcap_                    : 1000 ETH
-* _Period_                     : 14 days 
-* _Start_                      : Mon, 12 Feb 2018 00:00:00 GMT
-* _Wallet_                     : 
-* _Contract owner_             : 
+* _Base price_                 : 1 ETH = 6854,00959 REPU
+* _Hardcap_                    : 1800 ETH
+* _Duration_                   : 7 days 
+* _Start_                      : Fri Feb 23 2018 10:00:00 GMT
+* _Wallet_                     : 0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b
+
+##### Value bonus system
+* from 2 ETH bonus +2%
+* from 11 ETH bonus +5%
+* from 51 ETH bonus +7%
+* from 101 ETH bonus +10%
+
+##### Milestones
+1. 1 day                       : bonus +21,59% 
+2. 1 day                       : bonus +15,8% 
+3. 1 day                       : bonus +10,28% 
+4. 1 day                       : bonus +5,04%
+5. 3 days                      : without bonus
 
 #### ICO
-* _Base price_                 : 1000 REPU per ETH
-* _Hardcap_                    : 20 000 ETH
-* _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
-* _Wallet_                     : 
-* _Contract owner_             : 
+* _Base price_                 : 1 ETH = 3937.00788 REPU
+* _Hardcap_                    : 30 000 ETH
+* _Duration_                   : 30 days 
+* _Start_                      : Fri Feb 23 2018 10:00:00 GMT
+* _Wallet_                     : 0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b
 
-_Milestones_
-1. 2 days                      : bonus +40% 
-2. 7 days                      : bonus +30% 
-3. 7 days                      : bonus +20% 
-4. 7 days                      : bonus +10%
-4. 7 days                      : bonus +5%
-4. 7 days                      : without bonus
+##### Value bonus system
+* from 2 ETH bonus +2%
+* from 11 ETH bonus +3%
+* from 51 ETH bonus +5%
+* from 101 ETH bonus +7%
+* from 301 ETH bonus +10%
+* from 501 ETH bonus +15%
+* from 1000 ETH bonus +20%
 
+##### Milestones
+1. 1 week                      : bonus +48,2% 
+2. 1 week                      : bonus +29,99% 
+3. 1 week                      : bonus +14,01% 
+4. 9 days                      : without bonus
