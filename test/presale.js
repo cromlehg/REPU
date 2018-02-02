@@ -1,6 +1,7 @@
 import capped from './presale/capped';
 import common from './presale/common';
 import milestonebonus from './presale/milestonebonus';
+import totalbonus from './presale/totalbonus';
 import valuebonus from './presale/valuebonus';
 
 const token = artifacts.require('REPUToken.sol');
@@ -20,4 +21,8 @@ contract('Presale - value bonus test', function (accounts) {
 
 contract('Presale - milestone bonus test', function (accounts) {
   milestonebonus(token, crowdsale, accounts);
+});
+
+contract('Presale - total bonus test', function (accounts) {
+  totalbonus(token, crowdsale, accounts);
 });
