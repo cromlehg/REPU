@@ -30,7 +30,7 @@ To start working with contract you should follow next steps:
 3. Call 'deploy' function on addres from (3). Gas 4000000 (actually 3979551). 
 
 Contract manager must call finishMinting after each crowdsale milestone!
-To support external mint service manager should specify address by calling _setDirectMintAgent_. After that specified address can direct mint VST tokens by calling _directMint_.
+To support external mint service manager should specify address by calling _setDirectMintAgent_. After that specified address can direct mint REPU tokens by calling _directMint_.
 
 ### How to invest
 To purchase tokens investor should send ETH (above minimum limit) to corresponding crowdsale contract.
