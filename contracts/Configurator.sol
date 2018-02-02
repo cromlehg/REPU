@@ -89,11 +89,13 @@ contract Configurator is Ownable {
     mainsale.setBountyTokensPercent(6250);
     mainsale.setLotteryTokensWallet(0xDA7b920F54e14F0Cc5658f0635B45a0839Dbf18C);
     mainsale.setLotteryTokensPercent(625);
+    mainsale.setToken(token);
     mainsale.setDevWallet(devWallet);
 
     address manager = 0x8c782FAF936ce57Dca60791a47E680e7A34A6315;
 
     token.transferOwnership(manager);
+    closedRound.transferOwnership(manager);
     presale.transferOwnership(manager);
     mainsale.transferOwnership(manager);
   }
