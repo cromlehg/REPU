@@ -58,7 +58,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Manager_                     : 0x8c782FAF936ce57Dca60791a47E680e7A34A6315
 
 ### Links
-1. _Token_ - : https://etherscan.io/address/0x56d380d96d106ad0a3804adfd4f1e3453cfc33b6
+1. _Token_ - : https://etherscan.io/token/0x56d380d96d106ad0a3804adfd4f1e3453cfc33b6
 2. _Closed sale_ : https://etherscan.io/address/0x5691b364d7ac59713c67de87430e9e24815531a1
 2. _Presale_ - : https://etherscan.io/address/0x7cb244b63ffa22d192c94d375e096f174e0faad2
 3. _Mainsale_ - : https://etherscan.io/address/0xb94153f5d88cbc57c6ae2a498f17288c575793f3
