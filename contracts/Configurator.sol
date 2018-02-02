@@ -26,8 +26,8 @@ contract Configurator is Ownable {
     token.setSaleAgent(closedRound);
 
     closedRound.setWallet(0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b);
-    // closedRound.setStart();
-    // closedRound.setEnd();
+    closedRound.setStart(1517652000);
+    closedRound.setEnd(1519293600);
     closedRound.setPrice(1600000000000000000000);         // 1 REPU = 0.00008 ETH
     closedRound.setHardcap(1000000000000000000000);       // 1000 ETH
     closedRound.setMinInvestedLimit(1000000000000000000); // 1 ETH
@@ -40,7 +40,7 @@ contract Configurator is Ownable {
     closedRound.setNextSaleAgent(presale);
 
     presale.setWallet(0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b);
-    // presale.setStart();
+    presale.setStart(1519380000);
     presale.setPrice(6854009595613434000000);             // 1 REPU = 0.0001459 ETH
     presale.setPercentRate(10000);
     presale.addMilestone(1, 2159);                        // 8333.7902 REPU / ETH
@@ -59,13 +59,13 @@ contract Configurator is Ownable {
     presale.setNextSaleAgent(mainsale);
 
     mainsale.setWallet(0x29b637Ca54Fc1A9d8d92475f8a64C199c91B82E4);
-    // mainsale.setStart();
+    mainsale.setStart(1522663200);
     mainsale.setPrice(3937007874015748300000);                  // 1 REPU = 0.0002540 ETH
     presale.setPercentRate(10000000);
     mainsale.addMilestone(7, 4820000);                          // 5834.6456 REPU / ETH
     mainsale.addMilestone(7, 2999000);                          // 5117.7165 REPU / ETH
     mainsale.addMilestone(7, 1401000);                          // 4488.5826 REPU / ETH
-    mainsale.addMilestone(7, 0);                                // 3937.0078 REPU / ETH
+    mainsale.addMilestone(9, 0);                                // 3937.0078 REPU / ETH
     mainsale.setHardcap(30000000000000000000000);               // 30 000 ETH
     mainsale.setMinInvestedLimit(30000000000000000);            // 0.03 ETH
     mainsale.addValueBonus(2000000000000000000, 2000000);       // > 2 ETH => 2%
@@ -77,11 +77,11 @@ contract Configurator is Ownable {
     mainsale.addValueBonus(1000000000000000000000, 20000000);   // > 1000 ETH => 20%
     mainsale.setFoundersTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
     mainsale.setFoundersTokensPercent(1250000);
-    mainsale.setAdvisorsTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
+    mainsale.setAdvisorsTokensWallet(0x93b103Ecc79f6ef79038E041704a1083E9C4e1A6);
     mainsale.setAdvisorsTokensPercent(333000);
-    mainsale.setBountyTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
+    mainsale.setBountyTokensWallet(0xaAF9430b8B68146665acB4F05396d63a71d54C4d);
     mainsale.setBountyTokensPercent(625000);
-    mainsale.setLotteryTokensWallet(0x650F7fcBd397AB0C722D9EfBBd6Cd885d02e8f8F);
+    mainsale.setLotteryTokensWallet(0xDA7b920F54e14F0Cc5658f0635B45a0839Dbf18C);
     mainsale.setLotteryTokensPercent(625);
 
     address manager = 0x8c782FAF936ce57Dca60791a47E680e7A34A6315;
