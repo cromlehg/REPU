@@ -104,7 +104,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Hardcap_                    : 30 000 ETH
 * _Duration_                   : 30 days 
 * _Start_                      : Fri Feb 23 2018 10:00:00 GMT
-* _Wallet_                     : 0x425dE1C67928834AE72FB7E6Fc17d88d1Db4484b
+* _Wallet_                     : 0x29b637Ca54Fc1A9d8d92475f8a64C199c91B82E4
 
 ##### Value bonus system
 * from 2 ETH bonus +2%
