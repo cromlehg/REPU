@@ -1,3 +1,4 @@
+import bounty from './mainsale/bounty';
 import capped from './mainsale/capped';
 import common from './mainsale/common';
 import milestonebonus from './mainsale/milestonebonus';
@@ -20,4 +21,8 @@ contract('Mainsale - value bonus test', function (accounts) {
 
 contract('Mainsale - milestone bonus test', function (accounts) {
   milestonebonus(token, crowdsale, accounts);
+});
+
+contract('Mainsale - bounty test', function (accounts) {
+  bounty(token, crowdsale, accounts);
 });
