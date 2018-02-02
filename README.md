@@ -103,7 +103,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Base price_                 : 1 ETH = 3937.00788 REPU
 * _Hardcap_                    : 30 000 ETH
 * _Duration_                   : 30 days 
-* _Start_                      : Fri Feb 23 2018 10:00:00 GMT
+* _Start_                      : Mon Apr 02 2018 10:00:00 GMT
 * _Wallet_                     : 0x29b637Ca54Fc1A9d8d92475f8a64C199c91B82E4
 
 ##### Value bonus system
