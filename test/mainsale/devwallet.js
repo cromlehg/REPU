@@ -22,7 +22,7 @@ export default function (Token, Crowdsale, DevWallet, wallets) {
 
   beforeEach(async function () {
     this.start = latestTime() + duration.weeks(1);
-    this.duration = 30;
+    this.duration = 1;
     this.end = this.start + duration.days(this.duration);
     this.afterEnd = this.end + duration.seconds(1);
     this.price = tokens(3937.0078);
